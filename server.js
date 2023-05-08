@@ -2,8 +2,6 @@ const express = require('express')
 const nodemailer = require('nodemailer')
 const cors = require('cors');
 
-
-
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -40,5 +38,5 @@ app.post('/send-email', (req, res) => {
   })
   
 app.listen(port, () => {
-  console.log(`Servidor iniciado en http://localhost:${port}`)
+  console.log(`Servidor iniciado`)
 })
