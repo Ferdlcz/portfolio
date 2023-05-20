@@ -13,7 +13,7 @@
               <v-btn
                 title
                 dark
-                class="text-yellow mt-8"
+                class="text-yellow mt-8 reorder"
                 variant="outlined"
                 @click="scroll('contact')"
                 >Cotactame</v-btn
@@ -37,8 +37,8 @@
             </div>
           </v-col>
           <v-col cols="5">
-            <div style="position: relative; z-index: 9999" class="mt-16">
-              <v-img src="user(temporal).png" contain max-height="300"></v-img>
+            <div  style="position: relative; z-index: 9999" class="mt-16 circular-image">
+              <v-img src="Fotoperfil.png" contain max-height="300"></v-img>
             </div>
           </v-col>
         </v-row>
@@ -159,7 +159,7 @@
         </div>
       </v-col>
       <v-col cols="12" sm="12" id="projects">
-        <div class="text-center mt-4">
+        <div class="text-center marg">
           <h2>Proyectos</h2>
           <div style="width: 120px; margin: 0 auto">
             <v-slider v-model="slider2" color="yellow"></v-slider>
@@ -212,10 +212,13 @@ export default defineComponent({
     },
 
     descargarCurriculum() {
-      const url =
-        "https://drive.google.com/file/d/1xSlrtrTxgTqYAjZyTF9pG1neCMmpEwd2/view?usp=share_link";
-      window.open(url, "blank");
-    },
+  const rutaArchivo = "CV_FernandoDeLaCruzZapata.pdf"; // Ruta relativa al archivo en tu proyecto
+  const link = document.createElement("a");
+  link.href = rutaArchivo;
+  link.target = "_blank";
+  link.download = "CV_FernandoDeLaCruzZapata.pdf"; // Nombre de archivo para descargar
+  link.click();
+},
 
   },
 
@@ -337,4 +340,58 @@ export default defineComponent({
   background-color: #e9e9e9;
   margin-top: -24px;
 }
+
+.circular-image {
+    width: 300px; 
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden; 
+  }
+
+  @media screen and (max-width: 768px) {
+
+  .egg {
+    margin-left: 0;
+    margin-top: 0;
+    width: 200px;
+    height: 200px;
+  }
+
+  .first,
+  .pre,
+  .hire {
+    padding: 1rem;
+  }
+
+  .imgHover {
+    padding: 0;
+  }
+
+  .pre {
+    height: auto;
+  }
+
+  .hire {
+    margin-top: -12px;
+  }
+
+  .circular-image {
+    width: 200px;
+    height: 200px;
+    transform: translateX(-40px);
+  }
+
+  .marg{ 
+    margin-top: 255px;
+  }    
+  .reorder{
+    position: relative;
+    z-index: 9999;
+    transform: translate(205px, -80px);
+  } 
+    }
+    
+ 
+
+ 
 </style>
